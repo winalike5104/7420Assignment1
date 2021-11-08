@@ -22,7 +22,7 @@ h1{font-weight:normal;}
 
 .nav a{font-size:16px; color:#FFF; padding-right:40px; line-height:60px; display:block;}
 /*title*/
-.title{width:100%; margin:0 auto; background-image:url(images/bg6.jpg); height:200px;background-position:center top; background-repeat:no-repeat;}
+
 .title h1{color:#FFF; text-align:center; line-height:200px; font-size:40px; font-weight:bold;}
 /*three post*/
 .column-box{width:980px; margin:40px auto 0; overflow:hidden; height:280px;}
