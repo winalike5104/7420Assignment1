@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn doglike123.wsgi --log-file=-
+web: gunicorn assignment-1-repository.wsgi --log-file=-
