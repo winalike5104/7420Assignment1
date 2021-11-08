@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome to FlowTow</title>
+ <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+ 
+ <script src="/static/js/jquery-3.6.0.min.js"></script>
+ <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+ <script src="/static/js/renderIndex.js"></script>
+ <script src="/static/js/loginPart.js"></script>
+ <script src="/static/js/registerPart.js"></script>
+
+ <script type="text/javascript">
+ // adding likes if click add
+                  
+  $(document).ready(function(){
+      //adding nav-bar
+      // addBar()
+      
+      clickLogin()
+      clickLoginSubmit()
+
+      clickRegister()
+  });
+</script>
+</head>
+
+<body>
+  <div class="header">
+    <ul class="nav" id = "NAVBAR">
+       <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">About</a></li>
+        <li><a href="all_posts.html">All post</a></li>
+        <li class='login' id='LOGINLINK'><a id = 'LOGINTEXT' class='login-text' href='#'>Login</a></li>
+        <li class='register' id='REGISTERLINK'><a id = 'REGISTERTEXT' class='register-text' href='#'>Register</a></li>
+        
+    </ul>
+ </div>
+<div class='login-container' id="LOGINFORM">
+  
+</div>
+
+<div class = 'register-container' id='REGISTERFORM'>
+
+</div>
+
+<div class="title">
+  <h1>Welcome to FlowTow!</h1>
+</div>
+
+<div>
+<div id="posts" class="column-box">
+   
+</div>
+
+<div class="list-box">
+  
+   <div  class="recent">
+    <h1 id="commentsD">Most Recent Post</h1>
+   </div>
+    
+   <div  class="popular">
+    <h1 id = "commentsP">Most Popular Post</h1> 
+  </div>
+   
+</div>
+</body>
+</html>
+
