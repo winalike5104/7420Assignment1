@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
-from .models import Article
-from .serializers import Article, ArticleSerializer
+from .models import LoginInfo
+from .serializers import LoginInfo, LoginInfoSerializer
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -10,17 +10,17 @@ from rest_framework import status
 
 # Create your views here.
 @api_view(['GET','POST']) # with out decorators  we can not use post
-def article_list(request):
+def loginInfo_list(request):
 
     if request.method == 'GET':
-        articles = Article.objects.all()
-        serializer = ArticleSerializer(articles,many=True)
+        loginInfo = LoginInfo.objects.all()
+        serializer = LoginInfoSerializer(loginInfo,many=True)
 
         return Response(serializer.data)
 
     elif request.method == 'POST':
        
-        serializer = ArticleSerializer(data = request.data)
+        serializer = LoginInfoSerializer(data = request.data)
 
         if serializer.is_valid():
             serializer.save()
@@ -28,21 +28,21 @@ def article_list(request):
         return Response(serializer.errors,status = status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET','PUT','DELETE'])
-def article_detail(request,pk):
+def loginInfo_detail(request,pk):
     try:
-        article = Article.objects.get(pk=pk)
-    except Article.DoesNotExist:
+        loginInfo = LoginInfo.objects.get(pk=pk)
+    except LoginInfo.DoesNotExist:
         return HttpResponse(status=status.HTTP_404_NOT_FOUND)
     
     if request.method == 'GET':
         
-        serializer = ArticleSerializer(article)
+        serializer = LoginInfoSerializer(loginInfo)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
 
         
-        serializer = ArticleSerializer(article,data = request.data)
+        serializer = LoginInfoSerializer(loginInfo,data = request.data)
 
         if serializer.is_valid():
 
@@ -53,6 +53,6 @@ def article_detail(request,pk):
     
     elif request.method == 'DELETE':
 
-        article.delete()
+        loginInfo.delete()
         return HttpResponse(status=status.HTTP_204_NO_CONTENT)
         

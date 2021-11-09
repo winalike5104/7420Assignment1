@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article
+from .models import LoginInfo
 
 # class ArticleSerializer(serializers.Serializer):
     # title = serializers.CharField(max_length=100)
@@ -18,8 +18,8 @@ from .models import Article
     #     instance.save()
     #     return instance
 
-class ArticleSerializer(serializers.ModelSerializer):
+class LoginInfoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Article
-        fields = ['id','title','author']
+        model = LoginInfo
+        fields = ['userName','passWd','email']
         # fields = '__all__'
