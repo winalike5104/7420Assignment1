@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css'%}" />
+ 
+    <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.cookie.js'%}"></script>
+    <script src="{% static 'js/loginRender.js'%}"></script>
+    <script src="{% static 'js/registerPart.js'%}"></script>
+    <title>Please Login in First</title>
+    <script type="text/javascript">
+        // adding likes if click add
+                         
+         $(document).ready(function(){
+             //adding nav-bar
+             // addBar()  
+             
+         });
+       </script>
+</head>
+<body>
+    <div style="margin-bottom: 100px;">
+    </div>
+    <div id="REGISTERFORM">
+        <div class='login-box' >
+            <span>Register</span>
+        
+            <div>
+                <div class='input-content'>
+                    <div>
+                    <input id = 'registerUsername' type='text' autocomplete='off' placeholder='user name' />
+                    </div>
+                    <div>
+                    <input id = 'registerPasswd' type='password' autocomplete='off' placeholder='pass word'  />
+                    </div>
+                    <div>
+                    <input id = 'registerEmail' type='text' autocomplete='off' placeholder='Email Must Be real'  />
+                    </div>
+                </div>
+                <div class='button-b' style="margin-top: 50px;">
+                    <button id = 'REGISTERSUBMIT' type='submit' class='enter-btn'>submit</button>
+                </div>
+
+                <div class='login_register_forget'>
+                    <button class = "login_regester_button">go back</button> 
+                    
+                </div>
+        
+            </div>
+            
+    
+        
+        </div>
+    </div>
+    
+</body>
+</html>

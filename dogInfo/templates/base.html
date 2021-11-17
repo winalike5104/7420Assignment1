@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css'%}" />
+    <title>DogInfo</title>
+
+</head>
+<body class = "background1"> 
+    <div style="width: 1200px; margin: 0 auto; background-color:rgba(255, 255, 255, 0.842); padding: 20px;">
+    <nav>
+        {% if user.is_authenticated %}
+        <div>
+        <li>
+            <form class="logout-link" action="/logout/" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </li>
+        <li><a href="/dog_post/" style="text-decoration: none;">Register A DOG</a></li>
+        {% else %}
+
+        <li style="list-style: none;"><a style ="text-decoration: none" href ="/login/" >Login</a></li>
+        <li style="list-style: none;"><a a style ="text-decoration: none" href ="/signup/">Signup</a></li>
+        {% endif%}
+    </nav>
+    <div class = "contentStyle">
+    {% block content %}
+        
+    {% endblock%}
+    <div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css'%}" />
+ 
+    <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.cookie.js'%}"></script>
+    <script src="{% static 'js/jumpPages.js'%}"></script>
+    <script src="{% static 'js/loginPart.js'%}"></script>
+    <title>Please Login in First</title>
+    <script type="text/javascript">
+        // adding likes if click add
+                         
+         $(document).ready(function(){
+             //adding nav-bar
+             // addBar()
+             clickToRegisterPage();
+             clickLogin();  
+             
+         });
+       </script>
+</head>
+<body>
+    <div style="margin-bottom: 100px;">
+    </div>
+    <div id="LOGINFORM">
+        <div class='login-box' >
+            <span>Login</span>
+        
+            <div>
+                <div class='input-content'>
+                    <div>
+                    <input id = 'loginUsername' type='text' autocomplete='off' placeholder='user name' />
+                    </div>
+                    <div>
+                    <input id = 'loginPasswd' type='password' autocomplete='off' placeholder='pass word'  />
+                    </div>
+                </div>
+                <div class='button-b'>
+                    <button id = 'LOGINSUBMIT' type='submit' class='enter-btn'>submit</button>
+                </div>
+
+                <div class='login_register_forget'>
+                    <button class = "login_regester_button" id = "ToRegisterPage">register</a> 
+                    <button class = "login_regester_button">forget passwd</button>
+                </div>
+        
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,31 +1,5 @@
 function clickLogin() {
-    $("#LOGINLINK").click(function(){
-    console.log('Login clicked')
-        $("#LOGINFORM").html(("<div class='login-box' >"+
-            "<button id = 'CLOSEBUTTON' class='status incorrect'></button>"+
-            "<span>Login</span>"+
-        
-            "<div>"+
-            "<div class='input-content'>"+
-                "<div>"+
-                "<input id = 'loginUsername' type='text' autocomplete='off' placeholder='user name' />"+
-                "</div>"+
-                "<div>"+
-                "<input id = 'loginPasswd' type='password' autocomplete='off' placeholder='pass word'  />"+
-                "</div>"+
-            "</div>"+
-            "<div class='button-b'>"+
-            "<button id = 'LOGINSUBMIT' type='submit' class='enter-btn'>submit</button>"+
-            "</div>"+
-            "</div>"+
 
-        
-        "</div>"))
-    });
-
-    $("#LOGINFORM").on("click","#CLOSEBUTTON",function(){
-        $("#LOGINFORM").empty()
-      });
 
       $("#LOGINFORM").on("click","#LOGINSUBMIT",function(){
         console.log('login submit clicked')
@@ -37,7 +11,7 @@ function clickLogin() {
 
         let passJSON = {"userName":loginUsername,"passWd":loginPasswd}
         authentication(passJSON)
-        $("#CLOSEBUTTON").click()
+        // $("#CLOSEBUTTON").click()
       });
 }
 
@@ -66,7 +40,7 @@ function compare(passJSON,result){
         }
     }
     if(flag == 1){
-        alert("login success")
+        $(location).attr('href', '/indexPage/');
         
     }else{
         alert("account does not exist")
