@@ -3,9 +3,20 @@
 {% block content %}
 <div style="font-size: 60px; font-weight: bold; padding-top: 60px;">Dog list</div> 
     <div class = "dogs">
-        {% for dog in dog_list%}
+        <h3>own dog</h3>
+        {% for dog in dog_list1%}
         <div class = "dog">
-            <h2><a href="{% url 'detail' slug=dog.name%}">{{dog.name}}</h2>
+            <h2><a href="/dog_detail/{{dog.name}}/{{'yes'}}">{{dog.name}}</h2>
+            <p>{{dog.snippet}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class = "dogs">
+        <h3>other people's dog</h3>
+        {% for dog in dog_list2%}
+        <div class = "dog">
+            <h2><a href="/dog_detail/{{dog.name}}/{{'no'}}">{{dog.name}}</h2>
             <p>{{dog.snippet}}</p>
         </div>
         {% endfor %}

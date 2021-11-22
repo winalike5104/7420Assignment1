@@ -7,5 +7,9 @@
         <h5><p>Dog Birthday : {{dog.birthday}}</p></h5>
         <h5><p>Dog description : {{dog.description}}</p></h5>
         <h5><p>Register Date : {{dog.data}}</p></h5>
+        {% if judge == 1 %}
+        <li><a href="/editdog/{{dog.id}}" style="text-decoration: none;">edit</a></li>
+        {% endif%}
+
     </div>
 {% endblock %}

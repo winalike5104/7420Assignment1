@@ -5,6 +5,7 @@ abc
     <form  action="/login/" method="post" class="loginCSS">
         {% csrf_token %}
         {{form}}
+        <a href='/check/'>forget password</a>
         {% if request.GET.next %}
             <input type="hidden" value="{{request.GET.next}}">
         {% endif %}
