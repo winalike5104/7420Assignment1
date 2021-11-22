@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if message != 0%}
+        <h1>{{message}}</h1>
+    {% endif %}
+    {% if message == 0%}
+        <h1>check your username</h1>
+    {% endif %}
+    <form  action="" method="post"  class="loginCSS">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" name="" value="check" class="Sign-Submit">
+        
+    </form>
+    
+{% endblock %}

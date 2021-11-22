@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class = "dog">
+        <h1> Activity Information</h1>
+        <h5><p>Activity : {{appointment.activity}}</p></h5>
+        <h5><p>Time : {{appointment.time}}</p></h5>
+        <h5><p>Address : {{appointment.address}}</p></h5>
+        
+        <h5><p>Status : {{appointment.status}}</p></h5>
+        <h5><p>City : {{appointment.city}}</p></h5>
+        <h2><p>involved People : </p></h2>
+        {% for i in lst %}
+            <h5><p>{{i}}</p></h5>
+        {% endfor%}
+        {% if judge == 1 %}
+            <li style="list-style: none;"><a style ="text-decoration: none" href ="/quit/{{appointment.id}}" >Quit</a></li>
+        {% endif %}
+        {% if judge == 0 %}
+            <li style="list-style: none;"><a style ="text-decoration: none" href ="/book/{{appointment.id}}" >Book</a></li>
+        {% endif %}
+    </div>
+{% endblock %}

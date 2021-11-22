@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="font-size: 60px; font-weight: bold; padding-top: 60px;">Appointment</div> 
+    <div class = "dogs">
+        <li><a href="/setAappointment/" style="text-decoration: none;">set a appointment</a></li>
+        <!-- <li><a href="/appointments/" style="text-decoration: none;">Appointments</a></li> -->
+    </div>
+    {% if form != 0 %}
+
+        <form class = "post_dogCSS" action ="/setAappointment/" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="post" class="PostSubmit"></form>
+
+        </form>
+
+    {% endif %}
+
+    {% if appointments_list1 %}
+        <div class = "dogs">
+            <h3>joined appointment</h3>
+            {% for appointment in appointments_list1%}
+                <div class = "dog">
+                    <h2><a href="/appointment_detail/{{appointment.id}}/{{'yes'}}">{{appointment.activity}}</h2>
+                    <p>{{dog.snippet}}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+    {% if appointments_list2 %}
+        <div class = "dogs">
+            <h2>joined available appointment</h2>
+
+            {% for appointment in appointments_list2%}
+                <div class = "dog">
+                    <h2><a href="/appointment_detail/{{appointment.id}}/{{'no'}}">{{appointment.activity}}</h2>
+                    <p>{{dog.snippet}}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if message != 0%}
+    <h1>{{message}}</h1>
+    {% endif %}
+    {% if message == 0%}
+    <h1>validation code is not correct</h1>
+    {% endif %}
+    <form  action="/reset/" method="post"  class="loginCSS">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" name="" value="reset" class="Sign-Submit">
+        
+    </form>
+    
+{% endblock %}
